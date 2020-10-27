@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 400,
+  "title": "World Happiness as per GDP per capita",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Udara-Rodrigo/FIT3179.github.io/main/Bubble_Chart/2019.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "Score",
+      "type": "quantitative",
+      "title": "Happiness score",
+      "axis": {"tickCount": 4}
+    },
+    "y": {
+      "field": "GDP per capita",
+      "type": "quantitative",
+      "axis": {"tickCount": 4}
+    }
+  },
+  "layer": [
+    {
+      "selection": {
+        "continent_highlight": {
+          "type": "multi",
+          "fields": ["Continent"],
+          "bind": "legend"
+        }
+      },
+      "mark": "circle",
+      "encoding": {
+        "size": {
+          "field": "Score",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [2, 4, 6, 8],
+            "range": [10, 50, 150, 200]
+          },
+          "legend": {"format": ".1s"}
+        },
+        "color": {"field": "Continent", "type": "nominal"},
+        "opacity": {
+          "condition": {"selection": "continent_highlight", "value": 0.7},
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "Country or region", "type": "nominal"},
+          {"field": "Score", "type": "quantitative", "format": ","},
+          {"field": "GDP per capita", "type": "quantitative", "format": ","},
+          {"field": "Continent", "type": "nominal"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Country or region", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Country or region'] == 'India' || datum['Country or region'] =='Qatar' || datum['Country or region'] == 'Australia' || datum['Country or region'] == 'Burundi' || datum['Country or region'] == 'Nigeria' ||datum['Country or region'] == 'Finland'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Country or region", "type": "nominal"},
+          {"field": "Score", "type": "quantitative", "format": ","},
+          {"field": "GDP per capita", "type": "quantitative", "format": ","},
+          {"field": "Continent", "type": "nominal"},
+          {"field": "Score", "type": "quantitative", "format": ".2f"}
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
