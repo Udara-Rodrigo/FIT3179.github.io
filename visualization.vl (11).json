@@ -4,7 +4,7 @@
   "height": 400,
   "title": "Happiness over time",
   "data": {
-    "url": "https://raw.githubusercontent.com/Udara-Rodrigo/FIT3179.github.io/main/line_chart_2/share-of-people-who-say-they-are-happy.csv"
+    "url": "https://raw.githubusercontent.com/Udara-Rodrigo/FIT3179.github.io/main/share%20of%20happy%20people.csv"
   },
   "params": [
     {
