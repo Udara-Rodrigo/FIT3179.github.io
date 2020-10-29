@@ -12,15 +12,27 @@
   
 </head>
 <body>
-  
+<h1> Multiple visualizations</h1>
+ 
+<h2> This is the first visualization<h/2>
 <div id="scatter_plot"></div>
+  
+<h2> This is the second visualization<h/2>
+<div id="choropleth_map"></div>  
 
 <script type="text/javascript">
 
-  var spec2 = "visualization.vl (9).json";
-  vegaEmbed('#scatter_plot', spec2).then(function(result) {
+  var specScatter_plot = "visualization.vl (9).json";
+  var spec2Choropleth_map = "visualization.vl (10).json";
+  
+  vegaEmbed('#scatter_plot', specScatter_plot).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
+  
+  vegaEmbed('#choropleth_map', specChoropleth_map).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
 </script>
 
 </body>
