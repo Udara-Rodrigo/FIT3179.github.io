@@ -1,7 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 500,
-  "height": 400,
   "title": "World Happiness as per GDP per capita",
   "data": {
     "url": "https://raw.githubusercontent.com/Udara-Rodrigo/FIT3179.github.io/main/2019.csv"
