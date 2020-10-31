@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 500,
-  "height": 400,
+  "width": 600,
+  "height": 500,
   "title": "Happiness over time",
   "data": {
     "url": "https://raw.githubusercontent.com/Udara-Rodrigo/FIT3179.github.io/main/share%20of%20happy%20people.csv"
