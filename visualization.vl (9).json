@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "World Happiness as per GDP per capita",
-  "height" : 600,
-  "width" : 800,
+  "height" : 400,
+  "width" : 500,
   "data": {
     "url": "https://raw.githubusercontent.com/Udara-Rodrigo/FIT3179.github.io/main/2019.csv"
   },
@@ -67,8 +67,8 @@
         "color": {"value": "black"},
         "opacity": {
           "condition": {
-            "test": "datum['Country or region'] == 'India' || datum['Country or region'] =='Qatar' || datum['Country or region'] == 'Australia' || datum['Country or region'] == 'Burundi' || datum['Country or region'] == 'Nigeria' ||datum['Country or region'] == 'Finland'",
-            "value": 1
+            "test": "datum['Country or region'] == 'Mexico' || datum['Country or region'] =='Egypt' || datum['Country or region'] == 'Australia'||datum['Country or region'] == 'Finland'",
+            "value": 0.5
           },
           "value": 0
         },
