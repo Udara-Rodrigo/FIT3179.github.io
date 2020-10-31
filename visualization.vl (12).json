@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Scatter Plot matrix of happiness variables",
+  "height": 400,
+  "width": 500,
+  "repeat": {
+    "row": [
+      "Social support",
+      "Healthy life expectancy",
+      "Freedom to make life choices"
+    ],
+    "column": [
+      "Social support",
+      "Healthy life expectancy",
+      "Freedom to make life choices"
+    ]
+  },
+  "spec": {
+    "data": {
+      "url": "https://raw.githubusercontent.com/Udara-Rodrigo/FIT3179.github.io/main/2019.csv"
+    },
+    "mark": "point",
+    "selection": {
+      "brush": {
+        "type": "interval",
+        "resolve": "union",
+        "on": "[mousedown[event.shiftKey], window:mouseup] > window:mousemove!",
+        "translate": "[mousedown[event.shiftKey], window:mouseup] > window:mousemove!",
+        "zoom": "wheel![event.shiftKey]"
+      },
+      "grid": {
+        "type": "interval",
+        "resolve": "global",
+        "bind": "scales",
+        "translate": "[mousedown[!event.shiftKey], window:mouseup] > window:mousemove!",
+        "zoom": "wheel![!event.shiftKey]"
+      }
+    },
+    "encoding": {
+      "x": {"field": {"repeat": "column"}, "type": "quantitative"},
+      "y": {
+        "field": {"repeat": "row"},
+        "type": "quantitative",
+        "axis": {"minExtent": 30}
+      },
+      "color": {
+        "condition": {
+          "selection": "brush",
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "value": "grey"
+      },
+      "tooltip": [{"field": "Country or region", "type": "nominal"}]
+    }
+  },
+  "config": {}
+}
