@@ -1,8 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Scatter Plot matrix of happiness variables",
-  "height": 400,
-  "width": 500,
   "repeat": {
     "row": [
       "Social support",
@@ -19,6 +17,8 @@
     "data": {
       "url": "https://raw.githubusercontent.com/Udara-Rodrigo/FIT3179.github.io/main/2019.csv"
     },
+      "height" : 95,
+  "width" : 95,
     "mark": "point",
     "selection": {
       "brush": {
