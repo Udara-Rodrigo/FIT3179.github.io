@@ -93,6 +93,20 @@
         </div>
     </div>
     <!-- end pure grid group -->
+   
+    <!-- pure grid group -->
+   <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>Happiness Variables</h2>
+            <p>One of the major economic variables associated with the Happiness score is GDP per capita, It is measured by dividing the economic output of a country by it's population. This diagram shows how the happiness score is correlated with GDP per capita. A we can see, countries with a low GDP has a low score and countries with a high GDP has a higher happiness score.<p>
+          </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="scatter_matrix" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
 
     <!-- pure grid group -->
     <div class="pure-g">
@@ -128,6 +142,10 @@
   }).catch(console.error);
   
   vegaEmbed('#scatter_plot', specScatter_plot,{"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  vegaEmbed('#scatter_matrix', specScatter_plot,{"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
           
