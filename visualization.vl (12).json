@@ -1,22 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Scatter Plot matrix of happiness variables",
+  "title" : "Scatter Plot matrix of happiness variables",
   "repeat": {
-    "row": [
-      "Social support",
-      "Healthy life expectancy",
-      "Freedom to make life choices"
-    ],
-    "column": [
-      "Social support",
-      "Healthy life expectancy",
-      "Freedom to make life choices"
-    ]
+    "row": ["Social support","Healthy life expectancy","Freedom to make life choices"],
+    "column": ["Social support","Healthy life expectancy","Freedom to make life choices"]
   },
   "spec": {
-    "data": {
-      "url": "https://raw.githubusercontent.com/Udara-Rodrigo/FIT3179.github.io/main/2019.csv"
-    },
+    "data": {"url": "https://raw.githubusercontent.com/Udara-Rodrigo/FIT3179.github.io/main/2019.csv"},
       "height" : 95,
   "width" : 95,
     "mark": "point",
@@ -27,7 +17,12 @@
         "on": "[mousedown[event.shiftKey], window:mouseup] > window:mousemove!",
         "translate": "[mousedown[event.shiftKey], window:mouseup] > window:mousemove!",
         "zoom": "wheel![event.shiftKey]"
-      },
+        },
+        "continent_highlight": {
+          "type": "multi",
+          "fields": ["Continent"],
+          "bind": "legend"
+          },
       "grid": {
         "type": "interval",
         "resolve": "global",
@@ -48,11 +43,15 @@
           "selection": "brush",
           "field": "Continent",
           "type": "nominal"
-        },
-        "value": "grey"
+          },
+          "value":"grey"
       },
-      "tooltip": [{"field": "Country or region", "type": "nominal"}]
+      "opacity": {
+          "condition": {"selection": "continent_highlight", "value": 1},
+          "value": 0.2
+        },
+      "tooltip": [
+          {"field": "Country or region", "type": "nominal"}]
     }
-  },
-  "config": {}
-}
+  }
+    }
