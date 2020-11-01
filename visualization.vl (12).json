@@ -7,8 +7,8 @@
   },
   "spec": {
     "data": {"url": "https://raw.githubusercontent.com/Udara-Rodrigo/FIT3179.github.io/main/2019.csv"},
-      "height" : 95,
-  "width" : 95,
+      "height" : 90,
+  "width" : 90,
     "mark": "point",
     "selection": {
       "brush": {
