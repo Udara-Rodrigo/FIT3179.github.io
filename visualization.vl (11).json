@@ -209,7 +209,7 @@
           "Zambia",
           "Zimbabwe"
         ],
-        "name": "Country Selection: "
+        "name": "Select Country: "
       }
     }
   ],
@@ -234,7 +234,7 @@
  "test": " datum['Entity'] =='Egypt' || datum['Entity'] == 'Australia' || datum['Entity'] == 'Albania' || datum['Entity']=='Mexico'",
  "value": 1
  },
- "value": 0.1},
+ "value": 0.3},
     "tooltip": [
       {"field": "Entity", "type": "nominal"},
       {"field": "Year", "type": "temporal"},
