@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title" : "Scatter Plot matrix of happiness variables",
   "repeat": {
     "row": ["Social support","Healthy life expectancy","Freedom to make life choices"],
     "column": ["Social support","Healthy life expectancy","Freedom to make life choices"]
